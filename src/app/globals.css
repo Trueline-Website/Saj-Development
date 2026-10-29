@@ -1,26 +1,95 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-black: #000000;
+  --color-brand-white: #ffffff;
+  --color-brand-light-grey: #b0b0b0;
+  --color-brand-medium-grey: #7d7d7d;
+  --color-brand-dark-grey: #4d4d4d;
+
+  --color-surface-dark: #0a0a0a;
+  --color-surface-dark-subtle: #121212;
+  --color-surface-light: #ffffff;
+  --color-surface-light-muted: #f8f8f8;
+  --color-border-dark: #222222;
+  --color-border-light: #e5e5e5;
+
+  --font-headline: var(--font-aeonik), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-body: var(--font-work-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --brand-black: #000000;
+  --brand-white: #ffffff;
+  --brand-light-grey: #b0b0b0;
+  --brand-medium-grey: #7d7d7d;
+  --brand-dark-grey: #4d4d4d;
+  --background: #000000;
+  --foreground: #ffffff;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Base resets & typography */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--brand-black);
+  color: var(--brand-white);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--brand-black);
+  color: var(--brand-white);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+/* Typography styles matching brand guidelines */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headline);
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+p, span, a, button, input, textarea {
+  font-family: var(--font-body);
+}
+
+/* Restrained architectural scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #333333;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}
+
+/* Selection aesthetics */
+::selection {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid #b0b0b0;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
