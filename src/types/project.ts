@@ -5,10 +5,15 @@ export interface Project {
   category: "Residential Landmark" | "Private Villa Enclave" | "Waterfront Residence" | "Commercial Distinction";
   location: string;
   heroImage: string;
+  coverImage?: string;
+  galleryImages?: string[];
+  altText?: string;
   shortDescription: string;
+  description?: string;
   architecturalHighlights: string[];
   status: "Future Concept Preview" | "Architectural Design" | "Under Planning";
   isDemonstration: boolean;
+  detailsUrl?: string;
 }
 
 export interface BrandValue {

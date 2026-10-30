@@ -101,9 +101,8 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
     return {
       opacity: isVisible ? 1 : 0,
       transform: isVisible ? visibleTransform : initialTransform,
-      filter: isVisible ? visibleFilter : initialFilter,
-      transition: `${transitionProperty} ${duration}ms ${transitionTiming} ${delay}ms`,
-      willChange: "opacity, transform",
+      transition: `opacity ${duration}ms ${transitionTiming} ${delay}ms, transform ${duration}ms ${transitionTiming} ${delay}ms`,
+      willChange: isVisible ? "auto" : "opacity, transform",
     };
   };
 

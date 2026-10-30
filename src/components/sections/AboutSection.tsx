@@ -120,13 +120,13 @@ export const AboutSection: React.FC = () => {
           {/* Right Column — Architectural Imagery with Scale/Fade reveal */}
           <div className="lg:col-span-6 relative mt-8 lg:mt-0">
             <ScrollReveal variant="scale-up" duration={1100} delay={200}>
-              <div className="relative aspect-[4/5] sm:aspect-[1/1] lg:aspect-[4/5] w-full max-w-lg lg:max-w-none mx-auto overflow-hidden border border-neutral-800/80 bg-[#0a0a0a] group">
+              <div className="relative aspect-[4/5] sm:aspect-[1/1] lg:aspect-[4/5] w-full max-w-lg lg:max-w-none mx-auto overflow-hidden rounded-2xl border border-neutral-800/80 bg-[#0a0a0a] group">
                 <Image
                   src="/images/architecture/saj-about-unsplash.jpg"
                   alt="Contemporary luxury architectural geometry representing SAJ Development"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover object-center grayscale contrast-110 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+                  className="object-cover object-center contrast-105 group-hover:scale-105 transition-all duration-700 ease-out"
                 />
 
                 {/* Gradient vignette for contrast and depth */}
@@ -134,13 +134,13 @@ export const AboutSection: React.FC = () => {
 
                 {/* Top Inset Reticle Tag */}
                 <div className="absolute top-5 left-5 z-10">
-                  <span className="inline-flex items-center px-3 py-1.5 text-[10px] font-mono tracking-[0.2em] uppercase bg-black/85 backdrop-blur-md border border-neutral-800 text-neutral-300">
+                  <span className="inline-flex items-center px-3 py-1.5 text-[10px] font-mono tracking-[0.2em] uppercase bg-black/85 backdrop-blur-md border border-neutral-800 rounded-md text-neutral-300">
                     SAJ — ARCHITECTURAL ARCHIVE
                   </span>
                 </div>
 
                 {/* Bottom Inset Architectural Caption */}
-                <div className="absolute bottom-5 left-5 right-5 z-10 p-5 bg-black/80 backdrop-blur-md border border-neutral-800 flex items-end justify-between">
+                <div className="absolute bottom-5 left-5 right-5 z-10 p-5 bg-black/80 backdrop-blur-md border border-neutral-800 rounded-xl flex items-end justify-between">
                   <div>
                     <p className="text-[10px] font-mono uppercase tracking-[0.22em] text-neutral-400">
                       Dubai Horizon Benchmark

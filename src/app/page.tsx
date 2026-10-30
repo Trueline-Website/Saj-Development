@@ -1,5 +1,6 @@
 import { HeroSection } from "@/components/sections/HeroSection";
 import { AboutSection } from "@/components/sections/AboutSection";
+import { ProjectShowcase } from "@/components/sections/ProjectShowcase";
 import { FeaturedProjectsSection } from "@/components/sections/FeaturedProjectsSection";
 import { VisionPhilosophySection } from "@/components/sections/VisionPhilosophySection";
 import { WhySAJSection } from "@/components/sections/WhySAJSection";
@@ -14,7 +15,10 @@ export default function Home() {
       {/* Editorial About SAJ Section */}
       <AboutSection />
 
-      {/* Featured Demonstration Architectural Projects */}
+      {/* Selected Developments - Immersive Project Showcase */}
+      <ProjectShowcase />
+
+      {/* Featured Demonstration Architectural Projects Grid */}
       <FeaturedProjectsSection />
 
       {/* Our Vision & Philosophy Section */}

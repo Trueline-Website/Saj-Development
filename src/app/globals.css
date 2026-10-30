@@ -30,7 +30,6 @@
 
 /* Base resets & typography */
 html {
-  scroll-behavior: smooth;
   background-color: var(--brand-black);
   color: var(--brand-white);
   text-rendering: optimizeLegibility;
@@ -93,3 +92,25 @@ p, span, a, button, input, textarea {
     scroll-behavior: auto !important;
   }
 }
+
+/* GPU-accelerated 60fps infinite marquee carousel */
+@keyframes infinite-carousel {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-infinite-carousel {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: infinite-carousel 38s linear infinite;
+}
+
+.animate-infinite-carousel:hover {
+  animation-play-state: paused;
+}
+

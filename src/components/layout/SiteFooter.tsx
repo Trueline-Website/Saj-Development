@@ -8,16 +8,6 @@ import { siteConfig } from "@/config/site";
 export const SiteFooter: React.FC = () => {
   return (
     <footer className="bg-black text-white border-t border-neutral-900 pt-20 pb-12 relative overflow-hidden">
-      {/* Subtle background emblem watermark */}
-      <div className="absolute right-[-5%] bottom-[-10%] w-96 h-96 opacity-[0.03] pointer-events-none select-none">
-        <Image
-          src="/brand/saj-emblem-white.png"
-          alt=""
-          fill
-          className="object-contain"
-        />
-      </div>
-
       <Container size="wide">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 pb-16 border-b border-neutral-900">
           {/* Brand Column */}

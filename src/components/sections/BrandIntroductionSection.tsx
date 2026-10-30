@@ -42,19 +42,19 @@ export const BrandIntroductionSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
           {/* Left Column: Monolithic Architectural Photograph */}
           <div className="lg:col-span-7 relative group">
-            <div className="relative aspect-[16/11] sm:aspect-[16/10] w-full overflow-hidden border border-neutral-800 bg-[#0a0a0a]">
+            <div className="relative aspect-[16/11] sm:aspect-[16/10] w-full overflow-hidden rounded-2xl border border-neutral-800 bg-[#0a0a0a]">
               <Image
                 src="/images/projects/project-tower-1.jpg"
                 alt="SAJ Development Architectural Landmark"
                 fill
                 sizes="(max-width: 1024px) 100vw, 60vw"
-                className="object-cover object-center grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+                className="object-cover object-center contrast-105 group-hover:scale-105 transition-all duration-700 ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
 
               {/* Inset Badge */}
               <div className="absolute top-6 left-6 z-10">
-                <span className="inline-flex items-center px-3 py-1.5 text-[10px] font-mono tracking-[0.2em] uppercase bg-black/80 backdrop-blur-md border border-neutral-700 text-neutral-300">
+                <span className="inline-flex items-center px-3 py-1.5 text-[10px] font-mono tracking-[0.2em] uppercase bg-black/80 backdrop-blur-md border border-neutral-700 rounded-md text-neutral-300">
                   Architectural Precision
                 </span>
               </div>
@@ -82,7 +82,7 @@ export const BrandIntroductionSection: React.FC = () => {
           {/* Right Column: Three Architectural Pillars */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
             {/* Pillar 1: Thoughtful Planning */}
-            <div className="p-7 sm:p-8 bg-[#0a0a0a] border border-neutral-800/80 hover:border-neutral-600 transition-colors duration-300 flex flex-col justify-between flex-1 group">
+            <div className="p-7 sm:p-8 bg-[#0a0a0a] border border-neutral-800/80 hover:border-neutral-600 transition-colors duration-300 rounded-xl flex flex-col justify-between flex-1 group">
               <div className="flex items-center justify-between mb-4">
                 <span className="text-[11px] font-mono tracking-[0.2em] text-neutral-400 uppercase">
                   Pillar 01
@@ -100,7 +100,7 @@ export const BrandIntroductionSection: React.FC = () => {
             </div>
 
             {/* Pillar 2: Heritage & Forward Momentum */}
-            <div className="p-7 sm:p-8 bg-[#0a0a0a] border border-neutral-800/80 hover:border-neutral-600 transition-colors duration-300 flex flex-col justify-between flex-1 group">
+            <div className="p-7 sm:p-8 bg-[#0a0a0a] border border-neutral-800/80 hover:border-neutral-600 transition-colors duration-300 rounded-xl flex flex-col justify-between flex-1 group">
               <div className="flex items-center justify-between mb-4">
                 <span className="text-[11px] font-mono tracking-[0.2em] text-neutral-400 uppercase">
                   Pillar 02
@@ -118,7 +118,7 @@ export const BrandIntroductionSection: React.FC = () => {
             </div>
 
             {/* Pillar 3: Brand Promise Card */}
-            <div className="p-7 sm:p-8 bg-neutral-950 border border-neutral-800 relative overflow-hidden flex flex-col justify-between flex-1">
+            <div className="p-7 sm:p-8 bg-neutral-950 border border-neutral-800 relative overflow-hidden rounded-xl flex flex-col justify-between flex-1">
               <div className="relative z-10">
                 <span className="text-[10px] font-mono tracking-[0.25em] text-neutral-400 uppercase block mb-3">
                   The Brand Promise

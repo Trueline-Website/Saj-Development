@@ -14,8 +14,12 @@ export const demonstrationProjects: Project[] = [
     category: "Residential Landmark",
     location: "Dubai Canal District, UAE",
     heroImage: "/images/projects/project-tower-1.jpg",
+    coverImage: "/images/projects/project-tower-1.jpg",
+    altText: "Architectural exterior of Featured Project 01, a residential landmark tower in Dubai Canal District",
     shortDescription:
       "A soaring residential landmark crafted with fluted concrete geometries, tinted glass facades, and cantilevered sky terraces overlooking Dubai's horizon.",
+    description:
+      "A soaring residential landmark crafted with fluted concrete geometries, tinted glass facades, and cantilevered sky terraces overlooking Dubai's horizon. Conceived through structural discipline and pure geometric proportions.",
     architecturalHighlights: [
       "Geometric concrete exoskeleton",
       "Panoramic skyline vistas",
@@ -23,6 +27,11 @@ export const demonstrationProjects: Project[] = [
     ],
     status: "Architectural Design",
     isDemonstration: true,
+    detailsUrl: "/projects/featured-project-01",
+    galleryImages: [
+      "/images/projects/project-tower-1.jpg",
+      "/images/architecture/saj-hero-architecture.jpg",
+    ],
   },
   {
     id: "saj-featured-02",
@@ -31,8 +40,12 @@ export const demonstrationProjects: Project[] = [
     category: "Private Villa Enclave",
     location: "Palm Jumeirah & Coastal Enclave, Dubai",
     heroImage: "/images/projects/project-waterfront-2.jpg",
+    coverImage: "/images/projects/project-waterfront-2.jpg",
+    altText: "Coastal architectural pavilion of Featured Project 02 with reflecting pools at Palm Jumeirah",
     shortDescription:
       "An exclusive private waterfront enclave featuring minimal travertine stone pavilions, expansive reflecting pools, and uninterrupted sea vistas.",
+    description:
+      "An exclusive private waterfront enclave featuring minimal travertine stone pavilions, expansive reflecting pools, and uninterrupted sea vistas. Designed to foster privacy, tranquility, and natural light.",
     architecturalHighlights: [
       "Custom Italian travertine stonework",
       "Infinity edge reflection lagoons",
@@ -40,6 +53,11 @@ export const demonstrationProjects: Project[] = [
     ],
     status: "Under Planning",
     isDemonstration: true,
+    detailsUrl: "/projects/featured-project-02",
+    galleryImages: [
+      "/images/projects/project-waterfront-2.jpg",
+      "/images/architecture/saj-about-structure.jpg",
+    ],
   },
   {
     id: "saj-featured-03",
@@ -48,8 +66,12 @@ export const demonstrationProjects: Project[] = [
     category: "Waterfront Residence",
     location: "Dubai Marina & Harbour, UAE",
     heroImage: "/images/projects/project-penthouse-3.jpg",
+    coverImage: "/images/projects/project-penthouse-3.jpg",
+    altText: "Double-height interior and panoramic terrace of Featured Project 03 in Dubai Marina",
     shortDescription:
       "Curated multi-level sky residences defined by double-height monolithic walls, dark charcoal terrazzo floors, and bespoke bronze detailing.",
+    description:
+      "Curated multi-level sky residences defined by double-height monolithic walls, dark charcoal terrazzo floors, and bespoke bronze detailing. A refined synthesis of urban grandeur and domestic sanctuary.",
     architecturalHighlights: [
       "Double-height 7-metre living voids",
       "Charcoal terrazzo flooring",
@@ -57,6 +79,11 @@ export const demonstrationProjects: Project[] = [
     ],
     status: "Future Concept Preview",
     isDemonstration: true,
+    detailsUrl: "/projects/featured-project-03",
+    galleryImages: [
+      "/images/projects/project-penthouse-3.jpg",
+      "/images/projects/project-billboard-context.jpg",
+    ],
   },
 ];
 

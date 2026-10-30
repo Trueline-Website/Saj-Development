@@ -15,7 +15,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
       {/* 1. Large Architectural Photograph (Clean 4:3 Proportions with Sharp Geometry) */}
       <Link
         href={`/projects/${project.slug}`}
-        className="relative aspect-[4/3] w-full overflow-hidden bg-[#0d0d0d] border border-neutral-800/80 hover:border-neutral-500 transition-colors duration-500 block focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-neutral-400"
+        className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-[#0d0d0d] border border-neutral-800/80 hover:border-neutral-500 transition-colors duration-500 block focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-neutral-400"
         aria-label={`Explore ${project.name}`}
       >
         <Image
@@ -31,7 +31,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
 
         {/* Minimal Monospace Index Mark */}
         <div className="absolute top-4 right-4 z-10">
-          <span className="font-mono text-[11px] tracking-widest text-neutral-400 bg-black/70 backdrop-blur-md px-2 py-0.5 border border-neutral-800">
+          <span className="font-mono text-[11px] tracking-widest text-neutral-400 bg-black/70 backdrop-blur-md px-2 py-0.5 border border-neutral-800 rounded-md">
             0{index + 1}
           </span>
         </div>

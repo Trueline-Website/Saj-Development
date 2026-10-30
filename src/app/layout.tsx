@@ -3,7 +3,8 @@ import { Work_Sans } from "next/font/google";
 import { siteConfig } from "@/config/site";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
-import { ScrollProgressBar } from "@/components/ui/ScrollProgressBar";
+import { LoaderProvider } from "@/components/ui/LoaderContext";
+import { SlideUpLoader } from "@/components/ui/SlideUpLoader";
 import "./globals.css";
 
 // Work Sans: Official Secondary Typeface (Brand Guidelines 2026, Page 24)
@@ -51,6 +52,7 @@ export const metadata: Metadata = {
   },
 };
 
+
 export default function RootLayout({
   children,
 }: {
@@ -60,16 +62,18 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${workSans.variable} h-full scroll-smooth bg-black text-white antialiased`}
+      className={`${workSans.variable} h-full bg-black text-white antialiased`}
     >
       <body
         suppressHydrationWarning
         className="min-h-full flex flex-col bg-black text-white"
       >
-        <ScrollProgressBar />
-        <SiteHeader />
-        <main className="flex-1">{children}</main>
-        <SiteFooter />
+        <LoaderProvider>
+          <SlideUpLoader />
+          <SiteHeader />
+          <main className="flex-1">{children}</main>
+          <SiteFooter />
+        </LoaderProvider>
       </body>
     </html>
   );

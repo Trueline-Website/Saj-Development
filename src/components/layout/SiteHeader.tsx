@@ -9,13 +9,24 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { MobileNavigation } from "./MobileNavigation";
 
+import { useLoader } from "@/components/ui/LoaderContext";
+
 export const SiteHeader: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { isLoading } = useLoader();
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 30);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -25,7 +36,9 @@ export const SiteHeader: React.FC = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-700 ease-out ${
+          isLoading ? "-translate-y-6 opacity-0" : "translate-y-0 opacity-100"
+        } ${
           isScrolled
             ? "bg-black/90 backdrop-blur-md py-4 border-b border-neutral-900 shadow-2xl"
             : "bg-gradient-to-b from-black/80 via-black/40 to-transparent py-6 lg:py-8"

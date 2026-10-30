@@ -9,6 +9,9 @@ interface DifferentiatorPrinciple {
   heading: string;
   description: string;
   tag: string;
+  image: string;
+  alt: string;
+  metric: string;
 }
 
 const differentiators: DifferentiatorPrinciple[] = [
@@ -19,6 +22,9 @@ const differentiators: DifferentiatorPrinciple[] = [
     description:
       "Every architectural decision should contribute to a coherent vision, balancing form, function, proportion, and the character of the surrounding environment.",
     tag: "COHERENCE & PROPORTION",
+    image: "/images/architecture/saj-detail-01.jpg",
+    alt: "Architectural form and minimalist lighting detail",
+    metric: "AXIS I · FORM",
   },
   {
     number: "02",
@@ -27,6 +33,9 @@ const differentiators: DifferentiatorPrinciple[] = [
     description:
       "A considered approach to structure, geometry, and detailing helps create architecture that feels balanced, intentional, and enduring.",
     tag: "RIGOR & CRAFTSMANSHIP",
+    image: "/images/architecture/saj-detail-02.jpg",
+    alt: "Geometric precision and structural steel drafting",
+    metric: "AXIS II · RIGOR",
   },
   {
     number: "03",
@@ -35,6 +44,9 @@ const differentiators: DifferentiatorPrinciple[] = [
     description:
       "Inspired by enduring design principles, SAJ's philosophy places lasting elegance and architectural clarity at the heart of the built environment.",
     tag: "PERMANENCE & CLARITY",
+    image: "/images/architecture/saj-detail-03.jpg",
+    alt: "Minimalist luxury materiality and enduring lines",
+    metric: "AXIS III · MATERIALITY",
   },
   {
     number: "04",
@@ -43,6 +55,9 @@ const differentiators: DifferentiatorPrinciple[] = [
     description:
       "With a vision shaped by Dubai's evolving skyline and the richness of Emirati heritage, SAJ aspires to create landmarks that leave a meaningful and lasting impression.",
     tag: "EMIRATI HERITAGE · DXB",
+    image: "/images/architecture/saj-detail-04.jpg",
+    alt: "Monumental architectural presence under Dubai sunlight",
+    metric: "AXIS IV · LEGACY",
   },
 ];
 
@@ -108,185 +123,85 @@ export const WhySAJSection: React.FC = () => {
         </div>
 
         {/* ======================================================================= */}
-        {/* 2. THE 4 PILLARS: CLEAN ARCHITECTURAL 2x2 EDITORIAL GRID                 */}
+        {/* 2. THE 4 PILLARS: ULTRA-SMOOTH HARDWARE-ACCELERATED INFINITE CAROUSEL    */}
         {/* ======================================================================= */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 divide-neutral-900 border-b border-neutral-900">
+        <div className="relative -mx-4 sm:-mx-6 lg:-mx-8 py-14 sm:py-20 border-b border-neutral-900 overflow-hidden">
           
-          {/* Column 1 (Pillars 01 & 03) */}
-          <div className="divide-y divide-neutral-900 lg:border-r border-neutral-900 lg:pr-12 xl:pr-16">
-            
-            {/* Principle 01 */}
-            <ScrollReveal variant="fade-up" delay={100} duration={850}>
-              <div className="py-14 sm:py-16 lg:py-20 group">
-                <div className="flex items-center justify-between mb-8">
-                  <span className="text-4xl sm:text-5xl lg:text-6xl font-mono font-light text-neutral-500 group-hover:text-white transition-colors duration-300">
-                    {differentiators[0].number}
-                  </span>
-                  <span className="text-[10px] font-mono tracking-[0.24em] uppercase text-neutral-400 border border-neutral-900 px-3 py-1">
-                    {differentiators[0].category}
-                  </span>
+          {/* Subtle gradient side vignettes for seamless endless loop blending */}
+          <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-28 z-20 pointer-events-none bg-gradient-to-r from-black via-black/70 to-transparent" />
+          <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-28 z-20 pointer-events-none bg-gradient-to-l from-black via-black/70 to-transparent" />
+
+          {/* Marquee Track (Duplicated twice to form an unbroken seamless 50% loop) */}
+          <div className="animate-infinite-carousel flex items-stretch gap-6 sm:gap-8 px-4 sm:px-8">
+            {[...differentiators, ...differentiators].map((item, index) => (
+              <div
+                key={`${item.number}-${index}`}
+                className="group relative flex flex-col justify-between w-[320px] sm:w-[420px] lg:w-[460px] flex-shrink-0 bg-[#080808] border border-neutral-800/90 hover:border-neutral-500 transition-colors duration-500 rounded-xl overflow-hidden select-none"
+              >
+                {/* Background Subtle Gradient & Glow */}
+                <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] via-transparent to-black/80 pointer-events-none" />
+
+                {/* 1. Architectural Visual Container */}
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-black/60 border-b border-neutral-900">
+                  <Image
+                    src={item.image}
+                    alt={item.alt}
+                    fill
+                    sizes="(max-width: 768px) 320px, 460px"
+                    className="object-cover object-center contrast-105 transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  {/* Cinematic gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/30 to-black/20 pointer-events-none" />
+
+                  {/* Blueprint Inset Metrology Tag */}
+                  <div className="absolute top-4 left-4 z-10 flex items-center gap-2 bg-black/85 backdrop-blur-md px-2.5 py-1 border border-neutral-800 rounded-md text-[9px] font-mono tracking-widest uppercase text-neutral-300">
+                    <span className="w-1 h-1 rounded-full bg-white animate-pulse" />
+                    <span>{item.metric}</span>
+                  </div>
+
+                  {/* Top Right Principle Category Badge */}
+                  <div className="absolute top-4 right-4 z-10 font-mono text-[9px] tracking-widest uppercase text-neutral-400 bg-black/85 backdrop-blur-md px-2.5 py-1 border border-neutral-800 rounded-md">
+                    {item.category}
+                  </div>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-4 group-hover:text-neutral-200 transition-colors">
-                  {differentiators[0].heading}
-                </h3>
+                {/* 2. Content Body */}
+                <div className="p-7 sm:p-9 flex flex-col justify-between flex-1 relative z-10 space-y-6">
+                  <div>
+                    {/* Monolithic Number */}
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-3xl sm:text-4xl lg:text-5xl font-mono font-light text-neutral-500 group-hover:text-white transition-colors duration-500">
+                        {item.number}
+                      </span>
+                      <span className="text-[10px] font-mono tracking-[0.2em] text-neutral-400 uppercase">
+                        SAJ STANDARD
+                      </span>
+                    </div>
 
-                <div className="w-10 h-px bg-neutral-800 mb-6 group-hover:w-20 group-hover:bg-white transition-all duration-300" />
+                    <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight group-hover:text-neutral-100 transition-colors">
+                      {item.heading}
+                    </h3>
 
-                <p className="text-base text-neutral-400 font-light leading-relaxed max-w-xl">
-                  {differentiators[0].description}
-                </p>
+                    {/* Dynamic expanding underline */}
+                    <div className="w-10 h-px bg-neutral-800 my-4 group-hover:w-20 group-hover:bg-white transition-all duration-500" />
 
-                <div className="pt-8 mt-8 border-t border-neutral-950 flex items-center justify-between text-[10px] font-mono uppercase tracking-[0.2em] text-neutral-400">
-                  <span>{differentiators[0].tag}</span>
-                  <span className="text-neutral-400 group-hover:text-neutral-300 group-hover:translate-x-1 transition-all duration-300">
-                    →
-                  </span>
+                    <p className="text-xs sm:text-sm text-neutral-400 font-light leading-relaxed line-clamp-3">
+                      {item.description}
+                    </p>
+                  </div>
+
+                  {/* Bottom Metrology Strip with Arrow Animation */}
+                  <div className="pt-6 border-t border-neutral-900/90 flex items-center justify-between text-[10px] font-mono uppercase tracking-[0.2em] text-neutral-400">
+                    <span className="group-hover:text-neutral-300 transition-colors">{item.tag}</span>
+                    <span className="text-neutral-400 group-hover:text-white group-hover:translate-x-1.5 transition-all duration-300">
+                      →
+                    </span>
+                  </div>
                 </div>
+
               </div>
-            </ScrollReveal>
-
-            {/* Principle 03 */}
-            <ScrollReveal variant="fade-up" delay={250} duration={850}>
-              <div className="py-14 sm:py-16 lg:py-20 group">
-                <div className="flex items-center justify-between mb-8">
-                  <span className="text-4xl sm:text-5xl lg:text-6xl font-mono font-light text-neutral-500 group-hover:text-white transition-colors duration-300">
-                    {differentiators[2].number}
-                  </span>
-                  <span className="text-[10px] font-mono tracking-[0.24em] uppercase text-neutral-400 border border-neutral-900 px-3 py-1">
-                    {differentiators[2].category}
-                  </span>
-                </div>
-
-                <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-4 group-hover:text-neutral-200 transition-colors">
-                  {differentiators[2].heading}
-                </h3>
-
-                <div className="w-10 h-px bg-neutral-800 mb-6 group-hover:w-20 group-hover:bg-white transition-all duration-300" />
-
-                <p className="text-base text-neutral-400 font-light leading-relaxed max-w-xl">
-                  {differentiators[2].description}
-                </p>
-
-                <div className="pt-8 mt-8 border-t border-neutral-950 flex items-center justify-between text-[10px] font-mono uppercase tracking-[0.2em] text-neutral-400">
-                  <span>{differentiators[2].tag}</span>
-                  <span className="text-neutral-400 group-hover:text-neutral-300 group-hover:translate-x-1 transition-all duration-300">
-                    →
-                  </span>
-                </div>
-              </div>
-            </ScrollReveal>
-
+            ))}
           </div>
-
-          {/* Column 2 (Pillars 02 & 04) */}
-          <div className="divide-y divide-neutral-900 lg:pl-12 xl:pl-16">
-            
-            {/* Principle 02 */}
-            <ScrollReveal variant="fade-up" delay={200} duration={850}>
-              <div className="py-14 sm:py-16 lg:py-20 group">
-                <div className="flex items-center justify-between mb-8">
-                  <span className="text-4xl sm:text-5xl lg:text-6xl font-mono font-light text-neutral-500 group-hover:text-white transition-colors duration-300">
-                    {differentiators[1].number}
-                  </span>
-                  <span className="text-[10px] font-mono tracking-[0.24em] uppercase text-neutral-400 border border-neutral-900 px-3 py-1">
-                    {differentiators[1].category}
-                  </span>
-                </div>
-
-                <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-4 group-hover:text-neutral-200 transition-colors">
-                  {differentiators[1].heading}
-                </h3>
-
-                <div className="w-10 h-px bg-neutral-800 mb-6 group-hover:w-20 group-hover:bg-white transition-all duration-300" />
-
-                <p className="text-base text-neutral-400 font-light leading-relaxed max-w-xl">
-                  {differentiators[1].description}
-                </p>
-
-                <div className="pt-8 mt-8 border-t border-neutral-950 flex items-center justify-between text-[10px] font-mono uppercase tracking-[0.2em] text-neutral-400">
-                  <span>{differentiators[1].tag}</span>
-                  <span className="text-neutral-400 group-hover:text-neutral-300 group-hover:translate-x-1 transition-all duration-300">
-                    →
-                  </span>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            {/* Principle 04 */}
-            <ScrollReveal variant="fade-up" delay={350} duration={850}>
-              <div className="py-14 sm:py-16 lg:py-20 group">
-                <div className="flex items-center justify-between mb-8">
-                  <span className="text-4xl sm:text-5xl lg:text-6xl font-mono font-light text-neutral-500 group-hover:text-white transition-colors duration-300">
-                    {differentiators[3].number}
-                  </span>
-                  <span className="text-[10px] font-mono tracking-[0.24em] uppercase text-neutral-400 border border-neutral-900 px-3 py-1">
-                    {differentiators[3].category}
-                  </span>
-                </div>
-
-                <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-4 group-hover:text-neutral-200 transition-colors">
-                  {differentiators[3].heading}
-                </h3>
-
-                <div className="w-10 h-px bg-neutral-800 mb-6 group-hover:w-20 group-hover:bg-white transition-all duration-300" />
-
-                <p className="text-base text-neutral-400 font-light leading-relaxed max-w-xl">
-                  {differentiators[3].description}
-                </p>
-
-                <div className="pt-8 mt-8 border-t border-neutral-950 flex items-center justify-between text-[10px] font-mono uppercase tracking-[0.2em] text-neutral-400">
-                  <span>{differentiators[3].tag}</span>
-                  <span className="text-neutral-400 group-hover:text-neutral-300 group-hover:translate-x-1 transition-all duration-300">
-                    →
-                  </span>
-                </div>
-              </div>
-            </ScrollReveal>
-
-          </div>
-
-        </div>
-
-        {/* ======================================================================= */}
-        {/* 3. ARCHITECTURAL PANORAMIC FOOTER PLATE                                */}
-        {/* ======================================================================= */}
-        <div className="py-20 sm:py-28 lg:py-32">
-          <ScrollReveal variant="scale-up" duration={1100} delay={150}>
-            <div className="relative w-full h-[280px] sm:h-[400px] lg:h-[480px] overflow-hidden bg-[#070707] border border-neutral-900 group">
-              <Image
-                src="/images/architecture/saj-hero-cover-full.jpg"
-                alt="Sculptural architectural facade with interplay of light and structural shadow by SAJ Development"
-                fill
-                sizes="(max-width: 1280px) 100vw, 1200px"
-                className="object-cover object-center grayscale contrast-120 group-hover:grayscale-0 group-hover:scale-[1.02] transition-all duration-1000 ease-out"
-              />
-
-              {/* Atmosphere overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-black/30 pointer-events-none" />
-
-              {/* Minimalist CAD Inset Guides */}
-              <div className="absolute inset-6 sm:inset-10 border border-white/10 pointer-events-none">
-                <div className="absolute -top-1 -left-1 w-2.5 h-2.5 border-t border-l border-white/40" />
-                <div className="absolute -top-1 -right-1 w-2.5 h-2.5 border-t border-r border-white/40" />
-                <div className="absolute -bottom-1 -left-1 w-2.5 h-2.5 border-b border-l border-white/40" />
-                <div className="absolute -bottom-1 -right-1 w-2.5 h-2.5 border-b border-r border-white/40" />
-
-                <div className="absolute top-4 left-4 text-[9px] font-mono tracking-widest uppercase text-white/50">
-                  SAJ ARCHIVE · ELEVATION STUDY
-                </div>
-              </div>
-
-              {/* Bottom Caption Pill */}
-              <div className="absolute bottom-6 sm:bottom-10 left-6 sm:left-10 right-6 sm:right-10 flex flex-wrap items-center justify-between gap-4 text-[10px] font-mono tracking-[0.2em] uppercase text-neutral-300 bg-black/80 backdrop-blur-md px-5 py-3 border border-neutral-800">
-                <div className="flex items-center gap-2.5">
-                  <span className="w-1.5 h-1.5 bg-white" />
-                  <span className="text-white">PURPOSEFUL ARCHITECTURE</span>
-                </div>
-                <span className="text-neutral-400">AUTHENTIC EMIRATI HERITAGE · DUBAI</span>
-              </div>
-            </div>
-          </ScrollReveal>
         </div>
 
       </Container>

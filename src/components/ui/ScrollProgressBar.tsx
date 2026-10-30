@@ -11,11 +11,21 @@ export const ScrollProgressBar: React.FC = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => {
+    let ticking = false;
+
+    const updateScrollProgress = () => {
       const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
       if (totalScroll > 0) {
         const currentProgress = (window.scrollY / totalScroll) * 100;
         setScrollProgress(currentProgress);
+      }
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScrollProgress);
+        ticking = true;
       }
     };
 
